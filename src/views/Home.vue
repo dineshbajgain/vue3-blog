@@ -1,13 +1,10 @@
 <template>
   <div class="home">
-   home
-   <p>
-     My name is {{name}} and my age is {{age}}.
-    </p>
-     <button @click="handelClick">click me</button>
-     <br>
-    <input type="text" v-model="name">
-  </div>
+   <h1>Home</h1>
+   <h1>Refs</h1>
+   <p>{{first.name}} - {{first.age}}</p>
+   <button @click="updateFirst">Update First</button>
+   </div>
 </template>
 
 <script>
@@ -15,13 +12,11 @@ import {ref} from 'vue'
 export default {
   name: 'Home',
   setup(){
-    const name = ref('mario')
-    const age = ref(12)
-    const handelClick = ()=> {
-      name.value='dinesh'
-      age.value=23
+    const first = ref({name:'mario',age:30})
+    const updateFirst = ()=>{
+      first.value.age = 40
     }
-    return{name,age,handelClick}
+    return{first,updateFirst}
   },
 }
 </script>
