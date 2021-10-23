@@ -15,11 +15,15 @@ import { computed, ref} from 'vue'
 export default {
   name: 'Home',
   setup(){
-    const search = ref('')
+  //  defining empty variable
+   const search = ref('')
+   // defining array
    const names = ref(['dinesh','srijana','jagat','bhim','laxman'])
+   // using computed
    const matchingNames = computed(()=>{
       return names.value.filter(name=>name.includes(search.value))
    })
+   //returning value
    return{names,search,matchingNames}
   },
 }
