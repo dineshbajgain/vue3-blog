@@ -7,6 +7,7 @@
       <div v-for='name in matchingNames' :key='name'>
         {{name}}
       </div>
+      <button @click='handelClick'>Stop Watch</button>
    </div>
 </template>
 
@@ -24,15 +25,20 @@ export default {
       return names.value.filter(name=>name.includes(search.value))
    })
   // watch function
-  watch(search, ()=>{
+  const stopWatch = watch(search, ()=>{
     console.log("watch function")
   })
   // watchEffect function
-  watchEffect(()=>{
+  const stopEffect =watchEffect(()=>{
     console.log("watchEffect function",search.value)
   })
+  // invoke function
+  const handelClick = ()=>{
+    stopWatch()
+    stopEffect()
+  }
    //returning value
-   return{names,search,matchingNames}
+   return{names,search,matchingNames,handelClick}
   },
 }
 </script>
