@@ -1,32 +1,26 @@
 <template>
   <div class="home">
       <h1>Home</h1>
-      <h1>Refs</h1>
-      <p>{{first.name}} - {{first.age}}</p>
-      <button @click="updateFirst">Update First</button>
-      <h1>Reactive</h1>
-      <p>{{second.name}} - {{second.age}}</p>
-      <button @click="updateSecond">Update Second</button>
-
+      <h1>Computed</h1>
+      <input type="text" v-model="search">
+      <p>Search Term - {{search}}</p>
+      <div v-for='name in matchingNames' :key='name'>
+        {{name}}
+      </div>
    </div>
 </template>
 
 <script>
-import {ref, reactive} from 'vue'
+import { computed, ref} from 'vue'
 export default {
   name: 'Home',
   setup(){
-    const first = ref({name:'Dinesh',age:23})
-    const second = reactive({name:'Laxman',age:28})
-    const updateFirst = ()=>{
-      first.value.name='Dinesh Bajgain'
-      first.value.age = 25
-    }
-    const updateSecond = ()=>{
-      second.name = 'Laxman Bajgain'
-      second.age = 40
-    }
-    return{first,second,updateFirst,updateSecond}
+    const search = ref('')
+   const names = ref(['dinesh','srijana','jagat','bhim','laxman'])
+   const matchingNames = computed(()=>{
+      return names.value.filter(name=>name.includes(search.value))
+   })
+   return{names,search,matchingNames}
   },
 }
 </script>
