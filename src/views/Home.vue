@@ -5,7 +5,8 @@
      My name is {{name}} and my age is {{age}}.
     </p>
      <button @click="handelClick">click me</button>
-   
+     <br>
+    <input type="text" v-model="name">
   </div>
 </template>
 
