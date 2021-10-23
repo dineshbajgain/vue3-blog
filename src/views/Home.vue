@@ -1,44 +1,21 @@
 <template>
   <div class="home">
       <h1>Home</h1>
-      <h1>Computed</h1>
-      <input type="text" v-model="search">
-      <p>Search Term - {{search}}</p>
-      <div v-for='name in matchingNames' :key='name'>
-        {{name}}
-      </div>
-      <button @click='handelClick'>Stop Watch</button>
+      <PostList :posts="posts" />
    </div>
 </template>
-
 <script>
-import { computed, ref, watch, watchEffect} from 'vue'
+import { ref} from 'vue'
+import PostList from '../components/PostList.vue'
 export default {
   name: 'Home',
+  components:{PostList},
   setup(){
-  //  defining empty variable
-   const search = ref('')
-   // defining array
-   const names = ref(['dinesh','srijana','jagat','bhim','laxman'])
-   // using computed
-   const matchingNames = computed(()=>{
-      return names.value.filter(name=>name.includes(search.value))
-   })
-  // watch function
-  const stopWatch = watch(search, ()=>{
-    console.log("watch function")
-  })
-  // watchEffect function
-  const stopEffect =watchEffect(()=>{
-    console.log("watchEffect function",search.value)
-  })
-  // invoke function
-  const handelClick = ()=>{
-    stopWatch()
-    stopEffect()
-  }
-   //returning value
-   return{names,search,matchingNames,handelClick}
+    const posts = ref([
+      {title:'Welcome to the blog',body:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure ipsam cupiditate similique iusto nobis, tempore porro neque adipisci. Illum, iusto sequi. Facere labore tempora ad iusto reprehenderit accusamus, neque est!',id:1},
+      {title:'top 5 css tricks',body:'This is the second body Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure ipsam cupiditate similique iusto nobis, tempore porro neque adipisci. Illum, iusto sequi. Facere labore tempora ad iusto reprehenderit accusamus, neque est! ',id:2}
+      ])
+      return {posts}
   },
 }
 </script>
