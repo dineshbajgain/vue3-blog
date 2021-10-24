@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="bg-cream">
       <div v-if="error">{{ error }}</div>
       <div v-if="posts.length">
        <PostList :posts="posts" />
