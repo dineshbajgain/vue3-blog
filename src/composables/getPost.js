@@ -1,7 +1,6 @@
 import axios from 'axios'
 import {ref} from 'vue'
 const getPost = (id)=>{
-    console.log(id);
     const post = ref(null)
     const error = ref(null)
     const load = async ()=>{

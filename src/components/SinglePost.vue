@@ -40,7 +40,7 @@ export default {
     props:['post'],
     setup(props){
         const snippet = computed (()=>{
-            return props.post.body
+            return props.post.body.substring(0,500)+'...'
         })
 
         return { snippet }

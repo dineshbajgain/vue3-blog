@@ -1,6 +1,6 @@
 <template>
  <HeaderVue />
-  <router-view class="container mx-auto px-12 pt-2"/>
+  <router-view class="container mx-auto px-12 pt-2 pb-4"/>
   <FooterVue/>
 </template>
 <script>

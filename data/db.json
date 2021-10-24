@@ -9,7 +9,8 @@
             "webdev",
             "coding",
             "news"
-         ]
+         ],
+         "is_popular":true
         },
         {
           "userId": 1,
@@ -20,7 +21,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":true
         },
         {
           "userId": 1,
@@ -31,7 +33,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":true
         },
         {
           "userId": 1,
@@ -42,7 +45,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 1,
@@ -53,7 +57,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 1,
@@ -64,7 +69,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 1,
@@ -75,7 +81,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 1,
@@ -86,7 +93,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 1,
@@ -97,7 +105,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 1,
@@ -108,7 +117,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 2,
@@ -119,7 +129,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 2,
@@ -130,7 +141,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 2,
@@ -141,7 +153,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 2,
@@ -152,7 +165,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 2,
@@ -163,7 +177,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         },
         {
           "userId": 2,
@@ -174,7 +189,8 @@
             "webdev",
             "coding",
             "news"
-        ]
+        ],
+        "is_popular":false
         }
     ]
 }
