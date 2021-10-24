@@ -9,13 +9,13 @@
         <div class="grid grid-cols-12 gap-4">
           <div class="col-span-12 bg-white p-4">
             <input v-model="search" type="text" class="bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-            <button class="bg-red-500 text-white w-24 h-10">Search</button>
+            <button @click="searchByTitle" class="bg-red-500 text-white w-24 h-10">Search</button>
           </div>
           <div class="col-span-12 bg-white p-4">
             Categories
             <ul>
               <template v-for="category in categories" :key="category.id">
-                 <li class="flex justify-between p-4">
+                 <li class="flex justify-between p-4" @click="searchByCategoryId(category.id)">
                   <span class="text-left">{{category.name}}</span>
                   ({{category.count}})
                 </li>
@@ -42,19 +42,35 @@ import SinglePost from "./SinglePost.vue"
 import PopularSinglePostVue from "./post/PopularSinglePost.vue"
 import getCategories from '../composables/getCategories'
 import getFilteredData from '../composables/getFilteredData'
-import { ref,computed } from '@vue/reactivity'
+import { ref } from '@vue/reactivity'
+import { onMounted } from '@vue/runtime-core'
 
 export default {
   components:{SinglePost,PopularSinglePostVue},
     props:['posts','popular-posts'],
     setup(props){
+      //defining reactive variable
          const search = ref('')
-         const {categories} = getCategories()
-         const postData = computed(()=>{
-          const {searchPostData} =  getFilteredData()
-          return searchPostData(props.posts,'title',search.value)
-         })
-        return {search,categories,postData}
+         const searchKey = ref('title')
+         const exact = ref(false)
+         const postData = ref([])
+      // assessing data from composable
+        const {categories} = getCategories()
+        const {searchPostData} =  getFilteredData();
+      // mounted hook
+        onMounted(()=>{
+          searchByTitle()
+        })
+      // Search by title
+        const searchByTitle = ()=>{
+          postData.value = searchPostData(props.posts,'title',search.value,false)
+        }
+      // search by category id
+        const searchByCategoryId=(id)=>{
+          postData.value=searchPostData(props.posts,'category_id',id,true)
+        }
+        //returning value
+        return {search,exact,searchKey,categories,postData,searchByTitle,searchByCategoryId}
     }
 }
 </script>
