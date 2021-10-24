@@ -10,7 +10,7 @@
    </div>
 </template>
 <script>
-import PostList from '../components/PostList.vue'
+import PostList from '../components/post/PostList.vue'
 import getPosts from '../composables/getPosts'
 export default {
   name: 'Home',

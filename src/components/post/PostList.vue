@@ -39,9 +39,9 @@
 
 <script>
 import SinglePost from "./SinglePost.vue"
-import PopularSinglePostVue from "./post/PopularSinglePost.vue"
-import getCategories from '../composables/getCategories'
-import getFilteredData from '../composables/getFilteredData'
+import PopularSinglePostVue from "./PopularSinglePost.vue"
+import getCategories from '@/composables/getCategories'
+import getFilteredData from '@/composables/getFilteredData'
 import { ref,onMounted } from 'vue'
 
 export default {

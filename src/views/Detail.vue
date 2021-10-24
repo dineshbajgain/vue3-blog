@@ -5,21 +5,21 @@
         <span class="text-3xl">
             {{post.title}}
         </span>
-         <div class="grid grid-cols-3 p-8">
+         <div class="grid md:grid-cols-3 grid-cols-1 p-8">
         <span class="text-red-600">Dinesh Bajgain</span>
         <span class="text-red-600">Wednesday, April 23, 2021</span>
         <span class="text-red-600">Dinesh Bajgain</span>
       </div>
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-2">
-          <img src="../assets/img/avatar.png">
+        <div class="md:col-span-2 col-span-12 flex justify-center">
+          <img src="../assets/img/avatar.png" class="w-24 md:w-full text-center">
         </div>
-       <p class="col-span-10 text-left">
+       <p class="col-span-10 md:text-left text-center">
         {{post.body}}
       </p>
       </div>
-      <div class="text-right">
-        <span class="text-red">
+      <div class="text-right md:m-0 mt-10">
+        <span class="text-red md:visible invisible">
              Tags : 
         </span>
         <span v-for="tag in post.tags" class="bg-blue-400 p-2 m-2 rounded-md text-white"  :key="tag">#{{tag}} </span>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import getPost from "../composables/getPost"
+import getPost from "@/composables/getPost"
 export default {
     props:['id'],
     setup(props){

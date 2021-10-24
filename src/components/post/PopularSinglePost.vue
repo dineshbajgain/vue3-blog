@@ -6,7 +6,7 @@
         </div>
        <p class="col-span-10 text-left">
           <router-link :to="{ name:'Detail', params:{id:post.id}}">
-        <h1 class="text-xl">
+        <h1 class="text-xl hover:text-blue-700">
         {{post.title}}
         </h1>
       </router-link>
