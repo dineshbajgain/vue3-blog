@@ -12,10 +12,12 @@
             <button @click="searchByTitle" class="bg-red-500 text-white w-24 h-10">Search</button>
           </div>
           <div class="col-span-12 bg-white p-4">
+            <span class="font-bold">
             Categories
+            </span>
             <ul>
               <template v-for="category in categories" :key="category.id">
-                 <li class="flex justify-between p-4" @click="searchByCategoryId(category.id)">
+                 <li class="flex justify-between p-4 cursor-pointer hover:text-blue-600" @click="searchByCategoryId(category.id)">
                   <span class="text-left">{{category.name}}</span>
                   ({{category.count}})
                 </li>
