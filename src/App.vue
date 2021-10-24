@@ -1,7 +1,16 @@
 <template>
+  <HeaderVue />
   <router-view/>
+  <FooterVue/>
 </template>
+<script>
+import HeaderVue from "./components/partials/Header.vue"
+import FooterVue from "./components/partials/Footer.vue"
+export default {
+  components:{HeaderVue,FooterVue}
 
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

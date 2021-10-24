@@ -1,10 +1,15 @@
 <template>
-  <div>
+  <div class="shadow-lg pa-12 ma-12">
       <router-link :to="{ name:'Detail', params:{id:post.id}}">
-        <h3>
+        <h1 class="text-3xl">
         {{post.title}}
-        </h3>
+        </h1>
       </router-link>
+      <div>
+        <span>Dinesh Bajgain</span>
+        <span>Wednesday, April 23, 2021</span>
+        <span>Dinesh Bajgain</span>
+      </div>
       <p>
         {{snippet}}
       </p>
@@ -18,7 +23,7 @@ export default {
     props:['post'],
     setup(props){
         const snippet = computed (()=>{
-            return props.post.description.substring(0,100)+'...'
+            return props.post.body
         })
 
         return { snippet }
