@@ -25,8 +25,12 @@
           </button> 
       </div>
       </div>
-      
-      <span v-for="tag in post.tags" :key="tag">#{{tag}} </span>
+      <div>
+        <span class="text-red">
+             Tags : 
+        </span>
+        <span v-for="tag in post.tags" class="bg-blue-400 p-2 m-2 rounded-md text-white"  :key="tag">#{{tag}} </span>
+      </div>
   </div>
 </template>
 
